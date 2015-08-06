@@ -44,7 +44,7 @@ Game.prototype.checkWinner = function(player, playerBoxesArray){
 Game.prototype.reset = function(){
   this.player1Score = 0;
   this.player2Score = 0;
-}
+};
 
 Game.prototype.init = function(){
   // var player1 = new Player('team A', 'X');

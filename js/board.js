@@ -3,6 +3,7 @@
     this.player2Boxes = [];
     this.cells = $('.box');
     this.turnCounter = 0;
+    this.gameMoves = [];
  };
 
 
@@ -23,7 +24,8 @@
        $('.turn').html('<span>' + player1.team + '</span>');
        this.player2Boxes.push(boxClicked);
      } this.turnCounter += 1;
-  };
+       this.gameMoves.push(boxClicked);
+   };
 
  Board.prototype.resetBoard = function(){
   this.cells = $('.box');
@@ -35,7 +37,12 @@
   }
  };
 
- // Board.prototype.nullArray = function(){
- //  this.player1Boxes = [];
- //  this.player2Boxes = [];
- // };
+ Board.prototype.checkBox= function(boxClicked){
+  for (var i = 0; i < this.gameMoves.length; i++) {
+    if ($.inArray(parseInt(boxClicked[0].id), parseInt(this.gameMoves[i][0]))){
+      return true;
+    } else {
+      return false;
+    }
+   }
+  };

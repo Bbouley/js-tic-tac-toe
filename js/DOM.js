@@ -27,6 +27,11 @@ $(document).ready(function(){
     printScore();
   });
 
+  var unbind = function(){
+    $('.box').unbind('click').one('click', function(){
+      alert('undone');
+    });
+  };
 
   $('.box').on('click', function(event){
     game.board.makeMove($(this));
@@ -49,6 +54,6 @@ $(document).ready(function(){
           game.board.resetBoard();
         }
       }
-  });
+   });
 
 });
