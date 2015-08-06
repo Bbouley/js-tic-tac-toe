@@ -29,13 +29,6 @@
     this.winner = '';
   };
 
-  var player1 = new Player('Team awesome', 'X', 0);
-  var player2 = new Player('Team not great', 'O', 0);
-  var gameBoard = new Board();
-
-
-
-  var newgame = new Game(player1, player2, gameBoard);
 
 
   $('.box').one('click', function(event){
