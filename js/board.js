@@ -15,6 +15,7 @@
 
 
  Board.prototype.makeMove = function(boxClicked){
+    if(this.checkBox(boxClicked) === false){
      if(this.turnCounter%2 === 0){
        boxClicked.html('<p>' + player1.cellID + '</p>');
        $('.turn').html('<span>' + player2.team + '</span>');
@@ -24,7 +25,11 @@
        $('.turn').html('<span>' + player1.team + '</span>');
        this.player2Boxes.push(boxClicked);
      } this.turnCounter += 1;
-       this.gameMoves.push(boxClicked);
+       this.gameMoves.push(boxClicked.attr('id'));
+       console.log(this.gameMoves);
+     } else {
+      alert ('Stop Being Cheeky');
+     }
    };
 
  Board.prototype.resetBoard = function(){
@@ -38,11 +43,9 @@
  };
 
  Board.prototype.checkBox= function(boxClicked){
-  for (var i = 0; i < this.gameMoves.length; i++) {
-    if ($.inArray(parseInt(boxClicked[0].id), parseInt(this.gameMoves[i][0]))){
+    if($.inArray(boxClicked.attr('id'), this.gameMoves) >= 0){
       return true;
     } else {
       return false;
     }
-   }
   };

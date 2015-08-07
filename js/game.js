@@ -47,8 +47,5 @@ Game.prototype.reset = function(){
 };
 
 Game.prototype.init = function(){
-  // var player1 = new Player('team A', 'X');
-  // var player2 = new Player('team B', 'O');
-  // var newgame = new Game(board, player1, player2);
-  // return newgame;
+
 };
